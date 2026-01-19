@@ -1,5 +1,5 @@
 <?php
-require_once 'conexao.php';
+require_once '../config/conexao.php';
 
 $usuario = 'admin';
 $senha_hash = password_hash('123123', PASSWORD_ARGON2I);

@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once 'config/conexao.php';
+    require_once '../config/conexao.php';
 
     $usuario = $_POST['usuario'] ?? '';
     $senha = $_POST['senha'] ?? '';
@@ -22,12 +22,12 @@
         
         } else {
             $_SESSION['erro_login'] = 'Senha incorreta!';
-            header('Location: login.php');
+            header('Location: ../login.php');
             exit();
         }
     } else {
         $_SESSION['erro_login'] = 'Usuário não encontrado.';
-        header('Location: login.php');
+        header('Location: ../login.php');
         exit();
     }   
 ?>

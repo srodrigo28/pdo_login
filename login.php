@@ -1,7 +1,6 @@
 <?php
-require_once 'conexao.php';
-require_once './config/head.php';
-session_start();
+    require_once './config/head.php';
+    session_start();
 ?>
 
 <main>
@@ -19,7 +18,24 @@ session_start();
         </div>
         <button type="submit" class="btn btn-primary">Entrar</button>
     </form>
+        <?php
+            if ( isset( $_SESSION['erro_login']) ) { ?> 
+                <div class="alert alert-danger w-25 mx-auto mt-3" role="alert">
+                    <?php  
+                        echo "<p class='text-danger text-center'>" . $_SESSION['erro_login'] . "</p>";
+                        unset($_SESSION['erro_login']); 
+                    ?>
+                </div>
+            <?php } ?>
+        </div>
 </main>
+
+<script>
+  setTimeout(() => {
+    const el = document.querySelector('.alert');
+    if (el) el.remove();
+  }, 2000);
+</script>
 
 </body>
 </html>
